@@ -1,8 +1,19 @@
 import React from 'react';
-import ConvertForm from './components/ConvertForm';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
 
-function App() {
-  return <ConvertForm />;
-}
+import ConvertForm from './components/ConvertForm';
+import SuccessPage from './components/SuccessPage';
+
+const App = () => (
+
+  <Router>
+    <Routes>
+      <Route path="/" element={<ConvertForm />} />
+      <Route path="/success" element={<SuccessPage />} />
+    </Routes>
+  </Router>
+
+);
 
 export default App;
